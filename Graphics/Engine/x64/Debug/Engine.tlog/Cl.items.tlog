@@ -1,2 +1,9 @@
+C:\repos\Graphics\Graphics\Engine\CommandQueue.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\CommandQueue.obj
+C:\repos\Graphics\Graphics\Engine\Device.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\Device.obj
+C:\repos\Graphics\Graphics\Engine\Engine.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\Engine.obj
 C:\repos\Graphics\Graphics\Engine\EnginePch.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\EnginePch.obj
+C:\repos\Graphics\Graphics\Engine\Mesh.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\Mesh.obj
 C:\repos\Graphics\Graphics\Engine\pch.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\pch.obj
+C:\repos\Graphics\Graphics\Engine\RootSignature.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\RootSignature.obj
+C:\repos\Graphics\Graphics\Engine\Shader.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\Shader.obj
+C:\repos\Graphics\Graphics\Engine\SwapChain.cpp;C:\repos\Graphics\Graphics\Engine\x64\Debug\SwapChain.obj
