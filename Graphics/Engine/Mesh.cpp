@@ -35,5 +35,22 @@ void Mesh::Render()
 {
 	CMD_LIST->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	CMD_LIST->IASetVertexBuffers(0, 1, &_vertexBufferView); // Slot: (0~15)
+
+	// TODO
+	// 1) Buffer에 데이터 세팅
+	// 2) TableDescHeap에 CBV 전달
+	// 3) 모두 세팅이 끝났으면 TableDescHeap 커밋
+
+	{
+		D3D12_CPU_DESCRIPTOR_HANDLE handle = GEngine->GetCB()->PushData(0, &_transform, sizeof(_transform));
+		GEngine->GetTableDescHeap()->SetCBV(handle, CBV_REGISTER::b0);
+	} 
+	{
+		D3D12_CPU_DESCRIPTOR_HANDLE handle = GEngine->GetCB()->PushData(0, &_transform, sizeof(_transform));
+		GEngine->GetTableDescHeap()->SetCBV(handle, CBV_REGISTER::b1);
+	}
+
+	GEngine->GetTableDescHeap()->CommitTable();
+
 	CMD_LIST->DrawInstanced(_vertexCount, 1, 0, 0);
 }

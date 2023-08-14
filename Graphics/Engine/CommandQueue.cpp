@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CommandQueue.h"
 #include "SwapChain.h"
+#include "Engine.h"
 
 CommandQueue::~CommandQueue()
 {
@@ -68,13 +69,21 @@ void CommandQueue::RenderBegin(const D3D12_VIEWPORT* vp, const D3D12_RECT* rect)
 		D3D12_RESOURCE_STATE_PRESENT, // 화면 출력
 		D3D12_RESOURCE_STATE_RENDER_TARGET); // 외주 결과물
 
+	_cmdList->SetGraphicsRootSignature(ROOT_SIGNATURE.Get());
+	GEngine->GetCB()->Clear();
+	GEngine->GetTableDescHeap()->Clear();
+
+	ID3D12DescriptorHeap* descHeap = GEngine->GetTableDescHeap()->GetDescriptorHeap().Get();
+	_cmdList->SetDescriptorHeaps(1, &descHeap);
+
 	_cmdList->ResourceBarrier(1, &barrier);
 
-	// Set the viewport and scissor rect.  This needs to be reset whenever the command list is reset.
+	// Viewport와 ScissorRects를 설정합니다.  
+	// 명령 목록을 재설정할 때마다 이 설정을 재설정해야 합니다.
 	_cmdList->RSSetViewports(1, vp);
 	_cmdList->RSSetScissorRects(1, rect);
 
-	// Specify the buffers we are going to render to.
+	// 렌더링할 버퍼를 지정합니다.
 	D3D12_CPU_DESCRIPTOR_HANDLE backBufferView = _swapChain->GetBackRTV();
 	_cmdList->ClearRenderTargetView(backBufferView, Colors::LightSteelBlue, 0, nullptr);
 	_cmdList->OMSetRenderTargets(1, &backBufferView, FALSE, nullptr);

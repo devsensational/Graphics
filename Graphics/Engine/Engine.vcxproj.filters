@@ -45,6 +45,12 @@
     <ClInclude Include="Shader.h">
       <Filter>Resource</Filter>
     </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TableDescriptorHeap.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -74,9 +80,15 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TableDescriptorHeap.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Resuorces\Shader\default.hlsli">
+    <None Include="..\Resources\Shader\default.hlsli">
       <Filter>Shader</Filter>
     </None>
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿  pch.cpp
   CommandQueue.cpp
+  ConstantBuffer.cpp
   Device.cpp
   Engine.cpp
   EnginePch.cpp
@@ -7,5 +8,6 @@
   RootSignature.cpp
   Shader.cpp
   SwapChain.cpp
+  TableDescriptorHeap.cpp
   Generating Code...
   Engine.vcxproj -> C:\repos\Graphics\Graphics\Output\Engine.lib
