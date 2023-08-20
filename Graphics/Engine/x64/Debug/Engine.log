@@ -9,5 +9,6 @@
   Shader.cpp
   SwapChain.cpp
   TableDescriptorHeap.cpp
+  Texture.cpp
   Generating Code...
   Engine.vcxproj -> C:\repos\Graphics\Graphics\Output\Engine.lib
